@@ -4,10 +4,10 @@ import java.rmi.server.UnicastRemoteObject;
 
 import java.lang.*;
 
-public class CalcImpl extends UnicastRemoteObject implements Calc {
+public class Banco extends UnicastRemoteObject implements Calc {
     private ContaCorrente conta;
 
-    public CalcImpl() throws RemoteException {
+    public Banco() throws RemoteException {
         super();
         this.conta = new ContaCorrente(0, 0, 100);
     }
@@ -26,7 +26,7 @@ public class CalcImpl extends UnicastRemoteObject implements Calc {
 
     public static void main(String args[]) {
         try {
-            CalcImpl objRMI = new CalcImpl();
+            Banco objRMI = new Banco();
             Naming.rebind("rmi://localhost:5000/calc", objRMI);
         } catch (Exception e) {
             e.printStackTrace();

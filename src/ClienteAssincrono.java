@@ -1,6 +1,6 @@
 import java.rmi.Naming;
 
-public class CalcClientAssincrono {
+public class ClienteAssincrono {
     public static void main(String[] args) {
         try {
             Calc objCalc = (Calc) Naming.lookup("rmi://localhost:5000/calc");
